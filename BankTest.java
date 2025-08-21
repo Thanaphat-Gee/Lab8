@@ -19,17 +19,23 @@ public class BankTest {
         };
         Thread d1 = new Thread(depositor);
         Thread d2 = new Thread(depositor);
+        Thread d3 = new Thread(depositor);
         Thread w1 = new Thread(withdrawer);
         Thread w2 = new Thread(withdrawer);
-        d1.start();
-        d2.start();
-        w1.start();
-        w2.start();
+        Thread w3 = new Thread(withdrawer);
+        d1.start(); 
+        d2.start(); 
+        d3.start();      
+        w1.start(); 
+        w2.start(); 
+        w3.start();
         try {
-            d1.join();
-            d2.join();
-            w1.join();
-            w2.join();
+            d1.join();  
+            d2.join();  
+            d3.join(); 
+            w1.join();  
+            w2.join();  
+            w3.join(); 
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
